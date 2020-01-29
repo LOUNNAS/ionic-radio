@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-searchbar show-cancel-button="always" placeholder="search" (ionChange)="onSearchChange($event)" (ionCancel)="onClose()" ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list lines="full">
+    <ion-radio-group [value]="selectedId" (ionChange)="onSelect($event)">
+        <ion-item *ngFor="let category of categories">
+            <ion-label>{{category.name}}</ion-label>
+            <ion-radio slot="end" [value]="category.id"></ion-radio>
+        </ion-item>
+    </ion-radio-group>
+</ion-list>
+
+</ion-content>
